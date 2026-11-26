@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada — Web Neuron</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; margin: 0; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 2rem; background: #0b0b0c; color: #f5f5f7; font-family: Inter, -apple-system, "Segoe UI", system-ui, sans-serif; text-align: center; }
+    h1 { font-size: clamp(4rem, 14vw, 9rem); font-weight: 600; letter-spacing: -0.06em; line-height: 1; }
+    p { color: #a1a1a6; margin: 1rem 0 2rem; font-size: 1.15rem; }
+    a { display: inline-block; padding: 0.85rem 1.6rem; border-radius: 999px; background: #fff; color: #1d1d1f; font-weight: 500; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>Esta página no existe o fue movida.</p>
+    <!-- Ruta relativa: funciona tanto en usuario.github.io como en usuario.github.io/repositorio/ -->
+    <a id="home" href="./">Volver al inicio</a>
+  </main>
+  <script>
+    // En GitHub Pages de proyecto (usuario.github.io/repo/) la raíz del sitio es /repo/
+    var seg = location.pathname.split("/").filter(Boolean)[0];
+    var isProject = location.hostname.endsWith("github.io") && seg;
+    document.getElementById("home").href = isProject ? "/" + seg + "/" : "/";
+  </script>
+</body>
+</html>

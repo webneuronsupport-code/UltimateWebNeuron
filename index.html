@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Web Neuron — Diseño y desarrollo web para empresas</title>
+  <meta name="description" content="Web Neuron diseña y desarrolla páginas web a la medida: claras, rápidas y pensadas para generar clientes.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <script>
+    // Oculta el estado inicial solo si habrá animaciones (evita parpadeos)
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("js");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav is-dark is-clear" id="nav">
+    <div class="nav__inner container">
+      <a class="logo" href="#inicio" data-scroll aria-label="Web Neuron — inicio">
+        <img class="logo__mark" src="assets/brand/logo-mark-256.png" alt="" width="42" height="30">
+        <span>Web Neuron</span>
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#servicios" data-scroll>Servicios</a>
+        <a href="#proceso" data-scroll>Proceso</a>
+        <a href="#paquetes" data-scroll>Paquetes</a>
+        <a href="#contacto" data-scroll>Contacto</a>
+      </nav>
+      <a class="btn btn--dark btn--sm nav__cta" href="#contacto" data-scroll>Cotizar proyecto</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav>
+      <a href="#servicios" data-scroll>Servicios</a>
+      <a href="#proceso" data-scroll>Proceso</a>
+      <a href="#paquetes" data-scroll>Paquetes</a>
+      <a href="#contacto" data-scroll>Contacto</a>
+      <a class="menu__cta btn btn--dark btn--lg" href="#contacto" data-scroll>Cotizar proyecto</a>
+    </nav>
+  </div>
+
+  <!-- Vista previa que sigue al cursor en Servicios (fuera del scroll suave) -->
+  <div class="preview" id="preview" aria-hidden="true">
+    <img data-id="laptop" src="assets/img/laptop.jpg" alt="" loading="lazy">
+    <img data-id="desk" src="assets/img/desk.jpg" alt="" loading="lazy">
+    <img data-id="curve" src="assets/img/curve.jpg" alt="" loading="lazy">
+    <img data-id="team" src="assets/img/team.jpg" alt="" loading="lazy">
+    <img data-id="glass" src="assets/img/glass.jpg" alt="" loading="lazy">
+  </div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- ============ HERO (video) ============ -->
+      <section class="hero" id="inicio">
+        <div class="hero__stage" id="heroStage">
+          <video class="hero__video" id="heroVideo" src="assets/video/hero.mp4" muted loop playsinline autoplay preload="auto" aria-hidden="true" data-autoplay></video>
+          <div class="hero__shade" aria-hidden="true"></div>
+
+          <div class="hero__content container">
+            <p class="eyebrow eyebrow--light" data-hero>Diseño y desarrollo web</p>
+            <h1 class="hero__title" id="heroTitle">Sitios web que trabajan para tu negocio.</h1>
+            <div class="hero__row">
+              <p class="hero__sub" data-hero>
+                Diseñamos y desarrollamos páginas web a la medida: claras, rápidas y listas para convertir visitas en clientes.
+              </p>
+              <div class="hero__actions" data-hero>
+                <a class="btn btn--light" href="#contacto" data-scroll data-magnetic>Solicitar cotización</a>
+                <a class="link link--light" href="#servicios" data-scroll>Ver servicios <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <button class="media-toggle" id="heroToggle" type="button" aria-label="Pausar video de fondo" aria-pressed="false">
+            <svg class="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============ CINTA DE TEXTO ============ -->
+      <section class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span>Diseño</span><i></i><span>Desarrollo</span><i></i><span>Estrategia</span><i></i><span>Rendimiento</span><i></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DECLARACIÓN ============ -->
+      <section class="statement">
+        <div class="container container--narrow">
+          <p class="statement__text" id="statement">
+            Tu página web es la primera impresión de tu empresa y la herramienta de ventas que nunca descansa.
+            La construimos con ese nivel de cuidado: diseño propio, código limpio y cero plantillas genéricas.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ IMAGEN GIGANTE (se expande) ============ -->
+      <section class="expand" id="enfoque">
+        <div class="expand__pin">
+          <div class="expand__img"><img src="assets/img/curve.jpg" alt="" loading="lazy"></div>
+          <div class="expand__shade" aria-hidden="true"></div>
+          <div class="expand__text container">
+            <p class="eyebrow eyebrow--light">Nuestro enfoque</p>
+            <h2 class="h1">Cada sitio se diseña desde cero para tu marca.</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICIOS ============ -->
+      <section class="section" id="servicios">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-fade>Servicios</p>
+            <h2 class="h2" data-lines>Todo lo que necesitas para tener presencia en línea.</h2>
+          </header>
+
+          <ul class="rows">
+            <li class="row" data-row data-img="laptop">
+              <span class="row__num">01</span>
+              <h3 class="row__title">Páginas web corporativas</h3>
+              <p class="row__text">Sitios institucionales con identidad visual propia, contenido claro y estructura pensada para generar contactos.</p>
+            </li>
+            <li class="row" data-row data-img="desk">
+              <span class="row__num">02</span>
+              <h3 class="row__title">Tiendas en línea</h3>
+              <p class="row__text">Catálogo, carrito y pagos integrados en una experiencia de compra simple, segura y rápida.</p>
+            </li>
+            <li class="row" data-row data-img="curve">
+              <span class="row__num">03</span>
+              <h3 class="row__title">Aplicaciones web a medida</h3>
+              <p class="row__text">Paneles, sistemas internos y plataformas desarrolladas exactamente para la operación de tu negocio.</p>
+            </li>
+            <li class="row" data-row data-img="team">
+              <span class="row__num">04</span>
+              <h3 class="row__title">Diseño UI/UX</h3>
+              <p class="row__text">Interfaces limpias y fáciles de usar, diseñadas primero para móvil y después para escritorio.</p>
+            </li>
+            <li class="row" data-row data-img="glass">
+              <span class="row__num">05</span>
+              <h3 class="row__title">SEO y rendimiento</h3>
+              <p class="row__text">Optimización técnica y de velocidad para que tu sitio cargue rápido y aparezca mejor en buscadores.</p>
+            </li>
+            <li class="row" data-row data-img="laptop">
+              <span class="row__num">06</span>
+              <h3 class="row__title">Mantenimiento y soporte</h3>
+              <p class="row__text">Actualizaciones, respaldos y ajustes continuos para que tu sitio siga funcionando sin preocupaciones.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ PROCESO (galería horizontal) ============ -->
+      <section class="process section--alt" id="proceso">
+        <div class="process__pin">
+          <header class="process__head container">
+            <p class="eyebrow" data-fade>Proceso</p>
+            <h2 class="h2" data-lines>Un proceso claro, de la idea al lanzamiento.</h2>
+          </header>
+
+          <div class="process__viewport">
+            <div class="process__track">
+              <article class="panel" data-panel>
+                <div class="panel__media"><img src="assets/img/team.jpg" alt="Equipo creativo revisando paletas de color" loading="lazy"></div>
+                <div class="panel__body">
+                  <span class="panel__num">01</span>
+                  <h3>Descubrimiento</h3>
+                  <p>Conocemos tu negocio, tu público y tus objetivos. Definimos el alcance antes de diseñar.</p>
+                </div>
+              </article>
+              <article class="panel" data-panel>
+                <div class="panel__media"><img src="assets/img/desk.jpg" alt="Escritorio con laptop y libreta" loading="lazy"></div>
+                <div class="panel__body">
+                  <span class="panel__num">02</span>
+                  <h3>Diseño</h3>
+                  <p>Creamos la dirección visual y prototipos que puedes revisar y aprobar antes de programar.</p>
+                </div>
+              </article>
+              <article class="panel" data-panel>
+                <div class="panel__media"><video src="assets/video/code.mp4" muted loop playsinline preload="metadata" aria-hidden="true" data-autoplay></video></div>
+                <div class="panel__body">
+                  <span class="panel__num">03</span>
+                  <h3>Desarrollo</h3>
+                  <p>Programamos un sitio rápido, seguro y adaptable a cualquier pantalla, con animaciones cuidadas.</p>
+                </div>
+              </article>
+              <article class="panel" data-panel>
+                <div class="panel__media"><img src="assets/img/glass.jpg" alt="Fachada de edificio moderno en blanco y negro" loading="lazy"></div>
+                <div class="panel__body">
+                  <span class="panel__num">04</span>
+                  <h3>Lanzamiento</h3>
+                  <p>Pruebas finales, publicación y acompañamiento para que tu equipo se sienta seguro desde el día uno.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="process__bar container" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
+
+      <!-- ============ INCLUIDO ============ -->
+      <section class="section">
+        <div class="container included">
+          <div class="included__copy">
+            <p class="eyebrow" data-fade>En cada proyecto</p>
+            <h2 class="h2" data-lines>Lo básico bien hecho, siempre.</h2>
+            <ul class="checks">
+              <li data-fade>Diseño adaptable a móvil, tablet y escritorio</li>
+              <li data-fade>Estructura optimizada para buscadores (SEO)</li>
+              <li data-fade>Certificado de seguridad SSL</li>
+              <li data-fade>Formularios de contacto y enlace a WhatsApp</li>
+              <li data-fade>Analítica para medir resultados</li>
+              <li data-fade>Capacitación para administrar tu sitio</li>
+            </ul>
+          </div>
+          <figure class="included__fig" id="incFig">
+            <img src="assets/img/laptop.jpg" alt="Laptop sobre un escritorio blanco" loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ PAQUETES ============ -->
+      <section class="section section--alt" id="paquetes">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-fade>Paquetes</p>
+            <h2 class="h2" data-lines>Elige el punto de partida.</h2>
+            <p class="lead" data-fade>Cada proyecto se cotiza según sus necesidades. Estos paquetes son una referencia para empezar la conversación.</p>
+          </header>
+
+          <div class="plans">
+            <article class="plan" data-plan>
+              <h3>Esencial</h3>
+              <p class="plan__tag">Para empezar tu presencia en línea.</p>
+              <ul>
+                <li>Página de aterrizaje</li>
+                <li>Diseño adaptable</li>
+                <li>Formulario de contacto</li>
+                <li>SEO básico</li>
+              </ul>
+              <a class="btn btn--outline" href="#contacto" data-scroll>Solicitar cotización</a>
+            </article>
+
+            <article class="plan plan--dark" data-plan>
+              <span class="plan__badge">Recomendado</span>
+              <h3>Profesional</h3>
+              <p class="plan__tag">Para empresas que quieren crecer.</p>
+              <ul>
+                <li>Sitio de varias páginas a medida</li>
+                <li>Animaciones e interacciones</li>
+                <li>Panel para editar contenido</li>
+                <li>SEO técnico y analítica</li>
+                <li>Integración con redes y WhatsApp</li>
+              </ul>
+              <a class="btn btn--light" href="#contacto" data-scroll>Solicitar cotización</a>
+            </article>
+
+            <article class="plan" data-plan>
+              <h3>A medida</h3>
+              <p class="plan__tag">Para proyectos complejos.</p>
+              <ul>
+                <li>Tienda en línea o plataforma web</li>
+                <li>Desarrollo personalizado</li>
+                <li>Integraciones con otros sistemas</li>
+                <li>Seguridad y rendimiento avanzados</li>
+                <li>Soporte continuo</li>
+              </ul>
+              <a class="btn btn--outline" href="#contacto" data-scroll>Solicitar cotización</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="contact" id="contacto">
+        <div class="contact__bg" aria-hidden="true"><img src="assets/img/curve.jpg" alt="" loading="lazy"></div>
+        <div class="container contact__grid">
+          <header>
+            <p class="eyebrow eyebrow--light" data-fade>Contacto</p>
+            <h2 class="h1 contact__title" data-lines>Hablemos de tu proyecto.</h2>
+            <p class="lead lead--light" data-fade>Cuéntanos qué necesitas y te enviaremos una propuesta clara, con alcance y tiempos.</p>
+          </header>
+
+          <form class="form" id="contactForm" novalidate data-fade>
+            <div class="field">
+              <input type="text" id="f-name" name="nombre" placeholder=" " required autocomplete="name">
+              <label for="f-name">Nombre</label>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email">
+              <label for="f-email">Correo electrónico</label>
+            </div>
+            <div class="field">
+              <textarea id="f-msg" name="mensaje" rows="4" placeholder=" " required></textarea>
+              <label for="f-msg">Cuéntanos sobre tu proyecto</label>
+            </div>
+            <button class="btn btn--light btn--lg" type="submit" data-magnetic>Enviar mensaje</button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="footer">
+        <div class="container footer__inner">
+          <a class="logo" href="#inicio" data-scroll>
+            <img class="logo__mark" src="assets/brand/logo-mark-256.png" alt="" width="42" height="30">
+            <span>Web Neuron</span>
+          </a>
+          <nav class="footer__links" aria-label="Pie de página">
+            <a href="#servicios" data-scroll>Servicios</a>
+            <a href="#proceso" data-scroll>Proceso</a>
+            <a href="#paquetes" data-scroll>Paquetes</a>
+            <a href="#contacto" data-scroll>Contacto</a>
+          </nav>
+          <p class="footer__copy">© <span id="year">2026</span> Web Neuron. Todos los derechos reservados. Fotografías y video: Pexels.</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="vendor/gsap/gsap.min.js"></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="vendor/gsap/ScrollSmoother.min.js"></script>
+  <script src="vendor/gsap/ScrollToPlugin.min.js"></script>
+  <script src="vendor/gsap/SplitText.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
